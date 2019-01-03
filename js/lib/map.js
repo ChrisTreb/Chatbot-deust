@@ -43,7 +43,7 @@ window.getAdress = function(mapCity) {
     }
 }
 
-// Slide up function to close the map
+// Function to close the map and reload page
 
 $("#close-map").click(function(){
     location.reload();
