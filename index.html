@@ -15,13 +15,44 @@
 		<link rel="stylesheet" type="text/css" href="css/map.css">
 	</head>
 	<body>
-		
-		<div class="messagesContainer">
-		</div>
 
-		<button id="close-map" class="btn btn-danger btn-block">Fermer la carte pour pouvoir entrer une nouvelle adresse</button>
+		<div class="wrapper container-fluid">
+			<div class="row">
+				<div class="col-md-2">
+					<div class="commands wrapper">
+						<h2>Commandes:</h2>
+						<ul class="list-group">
+							<li class="list-group-item">quel âge</li>
+							<li class="list-group-item">ça va</li>
+							<li class="list-group-item">bonjour, salut</li>
+							<li class="list-group-item">quel est ton nom prénom</li>
+							<li class="list-group-item">Quel temps fait-il à + (ville)</li>
+							<li class="list-group-item">gif + (thème)</li>
+							<li class="list-group-item">chuck norris</li>
+							<li class="list-group-item">Montre moi l'affiche du film + (titre)</li>
+							<li class="list-group-item">j'ai une question</li>
+							<li class="list-group-item">montre moi la carte de + (ville)</li>
+							<li class="list-group-item">Insultez moi!</li>
+						</ul>
+					</div>
+				</div>
 
-		<div id="mapid">
+				<div class="col-md-8">
+					<div class="chat-head">
+						<h1>Bienvenue sur le Chat</h1>
+					</div>
+
+					<div class="messagesContainer">
+					</div>
+							
+					<button id="close-map" class="btn btn-danger btn-block">Fermer la carte pour pouvoir entrer une nouvelle adresse</button>
+					
+					<div id="mapid">
+					</div>
+				</div>
+
+				<div class="col-md-2"></div>
+			</div>
 		</div>
 		
 		<form class="bottomContainer">
@@ -50,7 +81,7 @@
 		<script type="text/javascript" src="js/lib/chuck.js"></script>
 		<script type="text/javascript" src="js/lib/film.js"></script>
 		<script type="text/javascript" src="js/lib/map.js"></script>
-
+		
 		<script
 			src="https://code.jquery.com/jquery-3.3.1.js"
 			integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="

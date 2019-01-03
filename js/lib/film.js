@@ -4,16 +4,22 @@ window.getFilm = function(filmTitle) {
     fetch(url).then(handleResponse);
   
     function handleJson(data) {
+
+      if(data.Response != "False"){
   
-      console.log(data);
+        console.log(data);
 
-      var filmUrl = data.Search[0].Poster;
-      var img = '<img style="height:300px" src="' + filmUrl + '" />';
+        var filmUrl = data.Search[0].Poster;
+        var img = '<img style="height:300px" src="' + filmUrl + '" />';
 
-      window.createMessage('me', img);
+        window.createMessage('me', img);
 
-      window.scrollToBottom();
-    
+        window.scrollToBottom();
+
+      } else {
+        window.createMessage('me', 'Je ne trouve aucune affiche correspondante, désolé.');
+        window.scrollToBottom();
+      }
     }
     
     function handleResponse(response) {

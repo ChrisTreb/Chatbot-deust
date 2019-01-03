@@ -51,7 +51,7 @@ SCROLL
 
 function scrollToBottom() {
   var el = document.querySelector(".messagesContainer");
-  el.scrollTo(0, el.scrollHeight);
+  el.scrollBy(0, el.scrollHeight);
 }
 
 window.scrollToBottom = scrollToBottom;
@@ -120,3 +120,4 @@ window.handleMessage = function(message) {
     }
   }
 }
+

@@ -4,16 +4,23 @@ window.getMeteo = function(city) {
 
   function handleJson(data) {
 
-    console.log(data);
-    
-    var ce = data.main.temp - 273.15;
-    var windSpeed = data.wind.speed;
-  
-    var text = 'Il fait ' + ce.toFixed(2) + ' degrés celsius, le vent souffle à ' + windSpeed + 'km/h'; 
-  
-    window.createMessage('me', text);
+    if(data.cod === 200){
 
-    window.scrollToBottom();
+      console.log(data);
+      
+      var ce = data.main.temp - 273.15;
+      var windSpeed = data.wind.speed;
+    
+      var text = 'Il fait ' + ce.toFixed(2) + ' degrés celsius, le vent souffle à ' + windSpeed + 'km/h'; 
+    
+      window.createMessage('me', text);
+
+      window.scrollToBottom();
+
+    } else {
+      window.createMessage('me', 'Je ne trouve pas les données météo, désolé.');
+      window.scrollToBottom();
+    }
   }
   
   function handleResponse(response) {

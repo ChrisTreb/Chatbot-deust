@@ -4,15 +4,21 @@ window.getGif = function(gifCategory) {
   
   function handleJson(data) {
 
-    console.log(data);
-  
-    var gifUrl = data.data.images.fixed_height.url;
-  
-    var img = '<img style="height:200px" src="' + gifUrl + '" />';
-  
-    window.createMessage('me', img);
+    if(data.data.length != 0){
 
-    window.scrollToBottom();
+      console.log(data);
+    
+      var gifUrl = data.data.images.fixed_height.url;
+    
+      var img = '<img style="height:200px" src="' + gifUrl + '" />';
+    
+      window.createMessage('me', img);
+
+      window.scrollToBottom();
+    } else {
+      window.createMessage('me', 'Je ne trouve pas de GIF approprié, désolé.');
+      window.scrollToBottom();
+    }
   }
   
   function handleResponse(response) {

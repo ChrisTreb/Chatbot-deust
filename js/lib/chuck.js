@@ -4,14 +4,22 @@ window.getChuck = function() {
     fetch(url).then(handleResponse);
   
     function handleJson(data) {
+
+      if(data.category == null){
   
-      console.log(data);
+        console.log(data);
 
-      var text = data.value;
+        var text = data.value;
 
-      window.createMessage('me', text);
+        window.createMessage('me', text);
 
-      window.scrollToBottom();
+        window.scrollToBottom();
+      } else {
+
+        window.createMessage('me', 'Désolé, je n\'ai pas trouvé Chuck, mais lui va sûrement vous trouver.');
+        window.scrollToBottom();
+        
+      }
     }
     
     function handleResponse(response) {
