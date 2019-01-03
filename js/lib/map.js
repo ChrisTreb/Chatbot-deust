@@ -1,9 +1,5 @@
 window.getAdress = function(mapCity) {
 
-    $("#mapid").slideDown();
-    $("#close-map").slideDown();
-    
-
     var url = "https://nominatim.openstreetmap.org/search/" + mapCity + "?format=json&addressdetails=1&limit=1&polygon_svg=1";
     fetch(url).then(handleResponse);
     
@@ -18,6 +14,9 @@ window.getAdress = function(mapCity) {
             var coord = 'Coordonées de '+ mapCity + ', latitude: ' + lat + ', longitude: ' + lon;
 
             window.createMessage('me', coord);
+
+            $("#mapid").slideDown();
+            $("#close-map").slideDown();
 
             // Display Map //
 

@@ -4,8 +4,7 @@ Go down the container on page reload
 ==================
 */
 
-var el = document.querySelector(".messagesContainer");
-window.onload = setTimeout(function(){ el.scrollBy(0, el.scrollHeight); }, 100);
+$(window).on('load', function() { $("html, body").animate({ scrollTop: $(document).height() }, 100); });
 
 /*
 ===================
@@ -50,8 +49,7 @@ SCROLL
 */
 
 function scrollToBottom() {
-  var el = document.querySelector(".messagesContainer");
-  el.scrollBy(0, el.scrollHeight);
+  $("html, body").animate({ scrollTop: $(".messagesContainer").height() }, 1000);
 }
 
 window.scrollToBottom = scrollToBottom;
@@ -109,7 +107,6 @@ HANDLE MESSAGE
 */
 
 window.handleMessage = function(message) {
-
   for (var key in rules) {
     var func = rules[key];
     key = new RegExp(key, 'gi');
