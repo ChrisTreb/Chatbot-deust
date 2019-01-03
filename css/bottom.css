@@ -1,0 +1,25 @@
+.bottomContainer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  z-index: 1000000;
+}
+
+.bottomContainer > .inputContainer {
+  flex: 6;
+}
+
+.bottomContainer > .inputContainer > input {
+  font-size: 1.2rem;
+  border-radius: 0;
+}
+
+.bottomContainer > .buttonContainer {
+  flex: 1;
+}
+
+.bottomContainer > .buttonContainer > button {
+  border-radius: 0;
+}

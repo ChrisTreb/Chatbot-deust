@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+	<head>
+		<title>Je suis un chat robot</title>
+		<meta charset="utf-8">
+
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
+		<script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==" crossorigin=""></script>
+	
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="css/general.css">
+		<link rel="stylesheet" type="text/css" href="css/bottom.css">
+		<link rel="stylesheet" type="text/css" href="css/messages.css">
+		<link rel="stylesheet" type="text/css" href="css/map.css">
+	</head>
+	<body>
+		
+		<div class="messagesContainer">
+		</div>
+
+		<button id="close-map" class="btn btn-danger btn-block">Fermer la carte pour pouvoir entrer une nouvelle adresse</button>
+
+		<div id="mapid">
+		</div>
+		
+		<form class="bottomContainer">
+			<div class="inputContainer">
+				<input
+					type="text"
+					name="message"
+					class="form-control"
+					placeholder="Tapez votre message ..."
+				/>
+			</div>
+			<div class="buttonContainer">
+				<button type="submit" class="btn btn-primary btn-block">
+					Envoyer
+				</button>
+			</div>
+		</form>
+
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+		<script type="text/javascript" src="js/localstorage.js"></script>
+		<script type="text/javascript" src="js/rules.js"></script>
+		<script type="text/javascript" src="js/lib/meteo.js"></script>
+		<script type="text/javascript" src="js/lib/gif.js"></script>
+		<script type="text/javascript" src="js/lib/chuck.js"></script>
+		<script type="text/javascript" src="js/lib/film.js"></script>
+		<script type="text/javascript" src="js/lib/map.js"></script>
+
+		<script
+			src="https://code.jquery.com/jquery-3.3.1.js"
+			integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+			crossorigin="anonymous">
+		</script>
+	</body>
+</html>
