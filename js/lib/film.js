@@ -1,6 +1,6 @@
 window.getFilm = function(filmTitle) {
     
-    var url = "http://www.omdbapi.com/?s=" + filmTitle + "&apikey=d8e9c003";
+    var url = "https://www.omdbapi.com/?s=" + filmTitle + "&apikey=d8e9c003";
     fetch(url).then(handleResponse);
   
     function handleJson(data) {

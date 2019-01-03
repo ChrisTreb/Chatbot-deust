@@ -1,5 +1,5 @@
 window.getMeteo = function(city) {
-  var url = "http://api.openweathermap.org/data/2.5/weather?appid=d3fbc543ce07d0376be06fccc25c7235&q=" + city;
+  var url = "https://api.openweathermap.org/data/2.5/weather?appid=d3fbc543ce07d0376be06fccc25c7235&q=" + city;
   fetch(url).then(handleResponse);
 
   function handleJson(data) {
