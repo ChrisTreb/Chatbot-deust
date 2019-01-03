@@ -30,7 +30,12 @@ window.getAdress = function(mapCity) {
                         'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
                     id: 'mapbox.streets'
                 }).addTo(mymap);
+
+                var marker = L.marker([lat, lon]).addTo(mymap);
+                marker.bindPopup("<b>"+ mapCity +"</b>").openPopup();
             }
+
+            
 
             displayMap();
 
