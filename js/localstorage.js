@@ -10,17 +10,14 @@ const store = window.localStorage;
 function getStorageContent(){
     if(store.message !== undefined){
         var json = JSON.parse(store.message);
-        console.log({json});
+        console.log(store.message);
         
         for(i=0; i < json.length; i++) {
-            if(i%2 == 1){
-                console.log({i});
-                var source = 'me';  
-                window.createMessage(source , json[i].content);
+            console.log(json[i].content);
+            if(json[i].user !== "Moi"){
+                window.createMessage("me", json[i].content);
             } else {
-                console.log({i});
-                var source = 'robot';
-                window.createMessage(source , json[i].content);
+                window.createMessage("robot", json[i].content);
             }
         }
     }
@@ -35,11 +32,12 @@ window.onload = getStorageContent();
 function dataStore(){
 
     var messageObj = {
-        content : createdDiv.message
+        user : window.createdDiv.from,
+        content : window.createdDiv.messageBody
     }
  
     storeArray.push(messageObj);
-    console.log(storeArray);
+    console.log({storeArray});
     store.setItem('message', JSON.stringify(storeArray));
 }
 

@@ -15,6 +15,21 @@ MESSAGES
 function createMessage(to, message) {
   var div = document.createElement('div');
 
+/* DATE */
+/*
+var date = new Date();
+var hours = date.getHours();
+var minutes = date.getMinutes();
+var seconds = date.getSeconds();
+var day = date.getDate();
+var monthNumber = date.getMonth();
+var year = date.getFullYear();
+
+
+var timeNow = `Le ${day}/0${parseInt(monthNumber) + 1}/${year}, à ${hours}:${minutes}:${seconds}`;
+*/
+//////////
+
   if (to === 'robot') {
     div.className = "message me";
   } else {
@@ -24,8 +39,11 @@ function createMessage(to, message) {
   // Ternary expression
   var from = (to === 'me') ? 'Robot' : 'Moi';
 
+  
+  var messageBody =  '<div class="message_content">' + message + '</div>';
+
   var content = '<div class="message_name">' + from + '</div>';
-  content += '<div class="message_content">' + message + '</div>';
+  content += messageBody;
 
   div.innerHTML = content;
 
@@ -34,9 +52,10 @@ function createMessage(to, message) {
   ///////////////////
   /* LOCALSTORAGE */
   /////////////////
-  createdDiv = {message};
-  console.log(createdDiv);
+  window.createdDiv = {from, messageBody};
+  console.log(window.createdDiv);
   window.dataStore();
+  
   /////////////////
 }
 
