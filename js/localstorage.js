@@ -33,7 +33,7 @@ function dataStore(){
 
     var messageObj = {
         user : window.createdDiv.from,
-        content : window.createdDiv.messageBody
+        content : window.createdDiv.message
     }
  
     storeArray.push(messageObj);

@@ -52,7 +52,7 @@ var timeNow = `Le ${day}/0${parseInt(monthNumber) + 1}/${year}, à ${hours}:${mi
   ///////////////////
   /* LOCALSTORAGE */
   /////////////////
-  window.createdDiv = {from, messageBody};
+  window.createdDiv = {from, message};
   console.log(window.createdDiv);
   window.dataStore();
   
