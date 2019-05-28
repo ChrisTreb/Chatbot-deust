@@ -1,5 +1,5 @@
 window.getGif = function(gifCategory) {
-  var url = "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=" + gifCategory + "&rating=pg-13";
+  var url = "https://api.giphy.com/v1/gifs/random?api_key=gnnwz7Qs2xVJfNFlsF6s7TUWFC7KcrRb&tag=" + gifCategory + "&rating=pg-13";
   fetch(url).then(handleResponse);
   
   function handleJson(data) {
