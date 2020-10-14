@@ -34,10 +34,10 @@ body {
 .chat-head {
     z-index: 200;
     background-color: black;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
+    width: 100%;
 }
 
 h1 {
