@@ -1,90 +1,87 @@
 <!DOCTYPE html>
 
 <html lang="fr">
-	<head>
-		<title>Je suis un chat robot</title>
-		<meta charset="utf-8">
 
-		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
-		<script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==" crossorigin=""></script>
-	
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-		<link rel="stylesheet" type="text/css" href="css/general.css">
-		<link rel="stylesheet" type="text/css" href="css/bottom.css">
-		<link rel="stylesheet" type="text/css" href="css/messages.css">
-		<link rel="stylesheet" type="text/css" href="css/map.css">
-	</head>
-	<body>
+<head>
+    <title>Je suis un chat robot</title>
+    <meta charset="utf-8">
 
-		<div class="wrapper container-fluid">
-			<div class="row">
-				<div class="col-md-2">
-					<div class="commands wrapper">
-						<h2>Commandes:</h2>
-						<ul class="list-group">
-							<li class="list-group-item">quel âge</li>
-							<li class="list-group-item">ça va</li>
-							<li class="list-group-item">bonjour, salut</li>
-							<li class="list-group-item">quel est ton nom prénom</li>
-							<li class="list-group-item">Quel temps fait-il à + (ville)</li>
-							<li class="list-group-item">gif + (thème)</li>
-							<li class="list-group-item">chuck norris</li>
-							<li class="list-group-item">Montre moi l'affiche du film + (titre)</li>
-							<li class="list-group-item">j'ai une question</li>
-							<li class="list-group-item">montre moi la carte de + (ville)</li>
-							<li class="list-group-item">Insultez moi!</li>
-						</ul>
-					</div>
-				</div>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==" crossorigin=""></script>
 
-				<div class="col-md-8">
-					<div class="chat-head">
-						<h1>Bienvenue sur le Chat</h1>
-						<div class="messagesContainer">
-						</div>
-					</div>
-	
-					<button id="close-map" class="btn btn-danger btn-block">Fermer la carte pour pouvoir entrer une nouvelle adresse</button>
-					
-					<div id="mapid">
-					</div>
-				</div>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/messages.css">
+    <link rel="stylesheet" type="text/css" href="css/general.css">
+    <link rel="stylesheet" type="text/css" href="css/bottom.css">
+    <link rel="stylesheet" type="text/css" href="css/map.css">
+</head>
 
-				<div class="col-md-2"></div>
-			</div>
-		</div>
-		
-		<form class="bottomContainer">
-			<div class="inputContainer">
-				<input
-					type="text"
-					name="message"
-					class="form-control"
-					placeholder="Tapez votre message ..."
-				/>
-			</div>
-			<div class="buttonContainer">
-				<button type="submit" class="btn btn-primary btn-block">
+<body>
+
+    <div id="burger-menu">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <div class="commands">
+        <h2>Commandes</h2>
+        <ul>
+            <li>quel âge</li>
+            <li>ça va</li>
+            <li>bonjour, salut</li>
+            <li>quel est ton nom prénom</li>
+            <li>Quel temps fait-il à + (ville)</li>
+            <li>gif + (thème)</li>
+            <li>chuck norris</li>
+            <li>Montre moi l'affiche du film + (titre)</li>
+            <li>j'ai une question</li>
+            <li>montre moi la carte de + (ville)</li>
+            <li>Insultez moi!</li>
+        </ul>
+    </div>
+
+    <div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="chat-head">
+                    <h1>Bienvenue sur le Chat</h1>
+                </div>
+                <div class="messagesContainer">
+                </div>
+
+                <button id="close-map" class="btn btn-danger btn-block">Fermer la carte pour pouvoir entrer une nouvelle adresse</button>
+
+                <div id="mapid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <form class="bottomContainer">
+        <div class="inputContainer">
+            <input type="text" name="message" class="form-control" placeholder="Tapez votre message ..." />
+        </div>
+        <div class="buttonContainer">
+            <button type="submit" class="btn btn-primary btn-block">
 					Envoyer
 				</button>
-			</div>
-		</form>
+        </div>
+    </form>
 
-		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-		<script type="text/javascript" src="js/bootstrap.js"></script>
-		<script type="text/javascript" src="js/main.js"></script>
-		<script type="text/javascript" src="js/localstorage.js"></script>
-		<script type="text/javascript" src="js/rules.js"></script>
-		<script type="text/javascript" src="js/lib/meteo.js"></script>
-		<script type="text/javascript" src="js/lib/gif.js"></script>
-		<script type="text/javascript" src="js/lib/chuck.js"></script>
-		<script type="text/javascript" src="js/lib/film.js"></script>
-		<script type="text/javascript" src="js/lib/map.js"></script>
-		
-		<script
-			src="https://code.jquery.com/jquery-3.3.1.js"
-			integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-			crossorigin="anonymous">
-		</script>
-	</body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/menu.js"></script>
+    <script type="text/javascript" src="js/localstorage.js"></script>
+    <script type="text/javascript" src="js/rules.js"></script>
+    <script type="text/javascript" src="js/lib/meteo.js"></script>
+    <script type="text/javascript" src="js/lib/gif.js"></script>
+    <script type="text/javascript" src="js/lib/chuck.js"></script>
+    <script type="text/javascript" src="js/lib/film.js"></script>
+    <script type="text/javascript" src="js/lib/map.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+    </script>
+</body>
+
 </html>

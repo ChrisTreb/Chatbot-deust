@@ -1,29 +1,90 @@
-html, body {
-  height: 100%;
-  min-height: 100%;
-  background: #4f5984;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    min-height: 100%;
+}
+
+.row {
+    padding: 0;
+    margin: 0;
+}
+
+#burger-menu {
+    position: fixed;
+    top: 5px;
+    left: 50px;
+    font-size: 40px;
+    z-index: 300;
+    color: white;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.col-md-12 {
+    margin: 0;
+    padding: 0;
+}
+
+.chat-head {
+    z-index: 200;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
 }
 
 h1 {
-  text-align: center;
-  color: #f4f4f4;
-}
-
-.commands {
-  position: fixed;
-  width: 15%;
+    padding-top: 10px;
+    text-align: center;
+    color: #f4f4f4;
 }
 
 h2 {
-  margin: 20% 0 0 0;
-  color: #f4f4f4;
+    width: 80%;
+    margin: 20% 0 0 0;
+    color: #f4f4f4;
+    margin-bottom: 50px;
+    padding: 20px;
+    border-bottom: 2px solid#f4f4f4;
+}
+
+.commands {
+    display: none;
+    width: 50vw;
+    height: 100vh;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 100;
 }
 
 li {
-  font-size: 10px;
+    font-size: 20px;
+    color: white;
+    margin: 5px 0;
 }
 
-.col-md-2 {
-  min-height: 100vh;
-  background: #121b3e;
+ul {
+    margin: 50px;
+    opacity: 1;
+    list-style-type: none;
+}
+
+.messagesContainer {
+    margin-top: 60px;
+}
+
+.inputContainer>.form-control {
+    height: 80px;
+}
+
+.buttonContainer>button {
+    height: 80px;
+    font-size: 30px;
 }
